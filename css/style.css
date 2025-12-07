@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* ====== MENU ====== */
+#sidebar {
+    width: 250px;
+    background: #1d1f21;
+    color: #fff;
+    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu>li {
+    margin-bottom: 15px;
+}
+
+.vol-title {
+    cursor: pointer;
+    display: block;
+    padding: 8px;
+    background: #2d2f31;
+    border-radius: 4px;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 8px;
+}
+
+.submenu li {
+    cursor: pointer;
+    padding: 6px 4px;
+    color: #ccc;
+}
+
+.submenu li:hover {
+    background: #3b3f44;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* ====== CONTENIDO ====== */
+#content {
+    margin-left: 260px;
+    padding: 20px;
+    width: calc(100% - 260px);
+}
+
+
+/* === RESPONSIVE === */
+/* === RESPONSIVE === */
+#menu-toggle {
+    display: none;
+    /* Oculto en PC */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+        /* Visible en móvil */
+    }
+
+    #sidebar {
+        left: -260px;
+        /* Oculto por defecto */
+        width: 250px;
+        z-index: 999;
+        transition: left 0.3s;
+    }
+
+    #sidebar.active {
+        left: 0;
+        /* Visible cuando tiene la clase active */
+    }
+
+    #content {
+        margin-left: 0;
+        width: 100%;
+        padding-top: 60px;
+        /* Espacio para el botón de menú */
+    }
+
+    #novel-content img {
+        height: auto;
+    }
+}
