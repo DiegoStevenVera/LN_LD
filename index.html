@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Novela — Proyecto Diego</title>
+    <title>Cuando la nieve se encuentra con el fuego</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Estilos -->
@@ -57,6 +57,26 @@
 
         <h2 id="titulo-acto"></h2>
         <pre id="texto" style="white-space:pre-wrap;"></pre>
+
+        <!-- ======= Christmas Popup ======= -->
+        <div id="christmas-popup" class="hidden">
+            <div class="popup-content">
+                <button class="close-btn" onclick="cerrarPopup()">×</button>
+
+                <div id="popup-auth">
+                    <h2>🎄 ¡Una Carta Navideña! 🎄</h2>
+                    <p>Para leer esta carta especial, necesitas la clave mágica.</p>
+                    <input type="password" id="popup-clave" placeholder="Ingresa la clave...">
+                    <button onclick="abrirCarta()">Abrir Carta</button>
+                    <p id="popup-mensaje" style="color: red; min-height: 20px;"></p>
+                </div>
+
+                <div id="popup-letter" class="hidden">
+                    <h2 id="popup-title">Carta de Navidad</h2>
+                    <div id="popup-body"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- Aquí aparecerán las imágenes descifradas/ocultas -->
         <div id="imagenes"></div>
